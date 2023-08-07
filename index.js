@@ -1,9 +1,11 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
+import { typeDefs } from "./schema";
 
 // Server Setup
 const server = new ApolloServer({
   // typeDefs -> short for type definitions. These are basically descriptions of our datatypes and the relationship they have with other datatypes
+  typeDefs,
   // resolvers -> a bunch of resolver functions that determine how we respond to queries for the different data on the graph
 });
 
