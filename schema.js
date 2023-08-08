@@ -19,11 +19,14 @@ export const typeDefs = `#graphql
 
     type Query {
         reviews: [Review]
+        review(id: ID!): Review
         games: [Game]
+        game(id: ID!): Game
         authors: [Author]
+        author(id: ID!): Author
     } 
 
-`
+`;
 
 // In GraphQL, there are 5 basic scalar types that we can use
 // -- INT

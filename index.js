@@ -18,6 +18,15 @@ const resolvers = {
     authors() {
       return db.authors;
     },
+    review(parent, args, context) {
+      return db.reviews.find((review) => review.id === args.id);
+    },
+    game(parent, args, context) {
+      return db.games.find((game) => game.id === args.id);
+    },
+    author(parent, args, context) {
+      return db.authors.find((author) => author.id === args.id);
+    },
   },
 };
 
@@ -25,7 +34,7 @@ const resolvers = {
 const server = new ApolloServer({
   // typeDefs -> short for type definitions. These are basically descriptions of our datatypes and the relationship they have with other datatypes
   typeDefs,
-  resolvers
+  resolvers,
   // resolvers -> a bunch of resolver functions that determine how we respond to queries for the different data on the graph
 });
 
